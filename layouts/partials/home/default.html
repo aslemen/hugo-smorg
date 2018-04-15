@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="columns">
 				<div class="column is-8 is-offset-2 has-text-centered">
-					<h1 class="title">{{ partial "logo.html" . }}</h1>
+					<h1 class="title">{{ .Site.Params.shortname }}</h1>
 					<h2 class="subtitle">
 						{{ with .Site.Params.fullname }}{{ . }}
 						{{ else }}{{ "Add params:fullname" }}{{end}}
@@ -16,16 +16,16 @@
 					</div>
 					<div class="columns">
 						<div class="column">
-							<h3 class="subtitle has-text-primary is-marginless">お知らせ</h3>
+							<h3 class="subtitle has-text-primary is-marginless">{{ i18n "news" }}</h3>
 							<ul>
-							{{ range first 5 (where .Data.Pages "Section" "post") }}
+							{{ range first 5 (where .Data.Pages "Section" "news") }}
 							<li><a href="{{.Permalink}}"><span class="icon">✎</span>{{ .Title }}</a></li>
 							{{ end }}
-							<li><a href="{{ "post/" | absURL}}">その他一覧<span class="icon">➤</span></a></li>
+							<li><a href="{{ "post/" | absURL}}">{{ i18n "more" }}<span class="icon">➤</span></a></li>
 							</ul>
 						</div>
 						<div class="column">
-							<h3 class="subtitle has-text-primary is-marginless">メンバー</h3>
+							<h3 class="subtitle has-text-primary is-marginless">{{ i18n "member" }}</h3>
 							<ul>
 							{{ range (where .Data.Pages "Section" "member") }}
 							<li><a href="{{.Permalink}}"><span class="icon">※</span>{{ .Title }}</a></li>
