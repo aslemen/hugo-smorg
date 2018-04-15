@@ -16,21 +16,20 @@
 					</div>
 					<div class="columns">
 						<div class="column">
-							<h3 class="subtitle has-text-primary is-marginless">Posts</h3>
+							<h3 class="subtitle has-text-primary is-marginless">お知らせ</h3>
 							<ul>
 							{{ range first 5 (where .Data.Pages "Section" "post") }}
 							<li><a href="{{.Permalink}}"><span class="icon">✎</span>{{ .Title }}</a></li>
 							{{ end }}
-							<li><a href="{{ "post/" | absURL}}">More posts<span class="icon">➤</span></a></li>
+							<li><a href="{{ "post/" | absURL}}">その他一覧<span class="icon">➤</span></a></li>
 							</ul>
 						</div>
 						<div class="column">
-							<h3 class="subtitle has-text-primary is-marginless">Projects</h3>
+							<h3 class="subtitle has-text-primary is-marginless">メンバー</h3>
 							<ul>
-							{{ range first 5 (where .Data.Pages "Section" "project") }}
+							{{ range (where .Data.Pages "Section" "member") }}
 							<li><a href="{{.Permalink}}"><span class="icon">※</span>{{ .Title }}</a></li>
 							{{ end }}
-							<li><a href="{{ "project/" | absURL }}">More projects<span class="icon">➤</span></a></li>
 							</ul>
 						</div>
 					</div>

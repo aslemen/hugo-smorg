@@ -18,10 +18,18 @@
 	{{- end -}}
 {{- end -}}
 
+{{- range .Translations }}
+	{{ template "navbar-lang" .Language }}
+{{- end -}}
+
 {{ define "navbar-item" }}
 	<a class="navbar-item" href="{{ .URL | absURL }}">{{ .Name }}</a>
 {{ end }}
 
 {{ define "navbar-link" }}
 	<a class="navbar-link" href="{{ .URL | absURL }}">{{ .Name }}</a>
+{{ end }}
+
+{{ define "navbar-lang" }}
+	<a class="navbar-item" href="{{ .URL | absURL }}">{{ .LanguageName }}</a>
 {{ end }}
