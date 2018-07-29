@@ -9,7 +9,10 @@ References config file variables:
   <div class="container content">
 	<div class="has-text-centered">
 		<p>{{ with .Site.Params.footer }}{{ . | safeHTML }}
-			  {{ else }}{{ "Add config: Params.footer" }}{{end}}
+			{{ else }}
+				{{ i18n "update-date" }} &nbsp; {{ .Lastmod }}<br>
+				{{ i18n "git-commit-hash" }} &nbsp; {{ .GitInfo }}
+			{{end}}
 		   </p>
 		<hr>
 		<p class="has-text-grey is-size-7">

@@ -6,3 +6,9 @@ other = "メンバー"
 
 [more]
 other = "その他一覧..."
+
+[update-date]
+other = "更新日時"
+
+[git-commit-hash]
+other = "Git Hash"

@@ -6,3 +6,9 @@ other = "Mitglieder"
 
 [more]
 other = "Mehr..."
+
+[update-date]
+other = "Updatestag"
+
+[git-commit-hash]
+other = "Git-Commit-ID"
