@@ -28,7 +28,7 @@
 							<h3 class="subtitle has-text-primary is-marginless">{{ i18n "member" }}</h3>
 							<ul>
 							{{ range (where .Data.Pages "Section" "member") }}
-							<li><a href="{{.Permalink}}"><span class="icon">※</span>{{ .Title }}</a></li>
+							<li><a href="{{.Permalink}}">{{ .Title }}</a></li>
 							{{ end }}
 							</ul>
 						</div>
