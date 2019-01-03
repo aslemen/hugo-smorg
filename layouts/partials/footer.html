@@ -8,12 +8,22 @@ References config file variables:
 <footer class="footer">
   <div class="container content">
 	<div class="has-text-centered">
-		<p>{{ with .Site.Params.footer }}{{ . | safeHTML }}
-			{{ else }}
-				{{ i18n "update-date" }} &nbsp; {{ .Lastmod }}<br>
-				{{ i18n "git-commit-hash" }} &nbsp; {{ .GitInfo }}
-			{{end}}
-		   </p>
+		<p>
+		{{ with .Site.Params.footer }}
+			{{ . | safeHTML }}
+		{{ else }}
+			{{ "Add config: Params.footer" }}
+		{{ end }}
+		</p>
+		<p>
+		{{ i18n "update-date" }} &nbsp; {{ .Lastmod.Local }} | 
+		{{ i18n "git-commit-hash" }} &nbsp; 
+		{{ with .GitInfo }}
+			{{ .AbbreviatedHash }}
+		{{ else }}
+			(N/A)
+		{{ end }}
+		</p>
 		<hr>
 		<p class="has-text-grey is-size-7">
 		{{ with .Site.Params.subfooter }} {{ . | safeHTML }}<br>
