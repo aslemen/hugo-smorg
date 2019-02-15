@@ -18,7 +18,7 @@
 						<div class="column">
 							<h3 class="subtitle has-text-primary is-marginless">{{ i18n "news" }}</h3>
 							<ul>
-							{{ range first 5 (where .Data.Pages "Section" "news") }}
+							{{ range first 5 (where .Data.Pages "Section" "post") }}
 							<li><a href="{{.Permalink}}"><span class="icon">✎</span>{{ .Title }}</a></li>
 							{{ end }}
 							<li><a href="{{ "post/" | absURL}}">{{ i18n "more" }}<span class="icon">➤</span></a></li>
